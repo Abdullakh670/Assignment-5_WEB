@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 1 · Height Duel</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/game.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">JS Lab · Assignment 5</a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="game.html" aria-current="page">1. Game</a>
+      <a href="kanban.html">2. Kanban</a>
+      <a href="tickets.html">3. Tickets</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="container">
+  <h1>Height Duel: Higher or Lower</h1>
+  <p class="lead">The left card shows a landmark and its height. Is the landmark on the right <strong>higher</strong> or <strong>lower</strong>? Equal heights count as a right guess. Keys: <kbd>H</kbd> = higher, <kbd>L</kbd> = lower.</p>
+
+  <dl class="status-bar" aria-label="Game status">
+    <div><dt>Lives</dt><dd id="lives" class="hearts" aria-live="polite"></dd></div>
+    <div><dt>Streak</dt><dd id="streak">0</dd></div>
+    <div><dt>Best streak</dt><dd id="best">0</dd></div>
+    <div><dt id="goal-label">Goal</dt><dd><progress id="goal" aria-labelledby="goal-label" value="0" max="1"></progress></dd></div>
+  </dl>
+
+  <div id="banner" class="banner" hidden></div>
+
+  <div class="duel">
+    <div id="card-current" class="duel-card is-current">
+      <div class="name" id="current-name"></div>
+      <div class="value" id="current-value"></div>
+    </div>
+    <div id="card-next" class="duel-card is-hidden">
+      <div class="name" id="next-name"></div>
+      <div class="value" id="next-value">?</div>
+    </div>
+  </div>
+
+  <div class="btn-row" role="group" aria-label="Your guess">
+    <button type="button" class="btn btn-primary" id="btn-higher" data-move="higher">Higher</button>
+    <button type="button" class="btn btn-primary" id="btn-lower" data-move="lower">Lower</button>
+    <button type="button" class="btn" id="btn-restart">Restart</button>
+  </div>
+
+  <p id="message" class="notice" role="status" aria-live="polite"></p>
+
+  <h2>Last 5 rounds</h2>
+  <ul id="history" class="history"></ul>
+</main>
+<footer class="site-footer"><div class="container">Orynbassar Abdullakh · Group IT 2510 · WEB Technologies 1</div></footer>
+</body>
+</html>
